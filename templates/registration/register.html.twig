@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProjectA!{% endblock %}
+
+
+{% block body %}
+      <div class="landscape">
+    <div class="mountain"></div>
+    <div class="mountain mountain-2"></div>
+    <div class="mountain mountain-3"></div>
+    <div class="sun-container sun-container-1">
+    </div>
+    <div class="sun-container">
+      <div class="sun"></div>
+    </div>
+    <div class="cloud"></div>
+    <div class="cloud cloud-1"></div>
+    <div class="sun-container sun-container-reflection">
+      <div class="sun"></div>
+    </div>
+    <div class="light"></div>
+    <div class="light light-1"></div>
+    <div class="light light-2"></div>
+    <div class="light light-3"></div>
+    <div class="light light-4"></div>
+    <div class="light light-5"></div>
+    <div class="light light-6"></div>
+    <div class="light light-7"></div>
+    <div class="water"></div>
+    <div class="splash"></div>
+    <div class="splash delay-1"></div>
+    <div class="splash delay-2"></div>
+    <div class="splash splash-4 delay-2"></div>
+    <div class="splash splash-4 delay-3"></div>
+    <div class="splash splash-4 delay-4"></div>
+    <div class="splash splash-stone delay-3"></div>
+    <div class="splash splash-stone splash-4"></div>
+    <div class="splash splash-stone splash-5"></div>
+    <div class="lotus lotus-1"></div>
+    <div class="lotus lotus-2"></div>
+    <div class="lotus lotus-3"></div>
+    <div class="trash-container"></div>
+    <div class="front">
+      <div class="stone"></div>
+      <div class="grass"></div>
+      <div class="grass grass-1"></div>
+      <div class="grass grass-2"></div>
+      <div class="reed"></div>
+      <div class="reed reed-1"></div>
+    </div>
+  </div>
+  <div class="logo"></div>
+   {% if app.user %}
+   <div class="money">
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+        </div>
+        {% else %}
+        <div class="txt">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!--Pulling Awesome Font -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="row">
+    <div class="form-register">
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.firstname) }}
+
+        {{ form_row(registrationForm.lastname) }}
+       
+        {{ form_row(registrationForm.username) }}
+       
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+         
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <div class="wrapper">
+            <span class="group-btn">     
+                
+    <button class="btn btn-lg btn-primary" type="submit">
+        Register
+    </button>
+            </span>
+            </div>
+    {{ form_end(registrationForm) }}
+    <a href="{{ '/' }}">Back</a>
+    </div>
+    </div>
+        </div>
+           </div>
+    {% endif %}
+    </div>
+ 
+
+{% endblock %}

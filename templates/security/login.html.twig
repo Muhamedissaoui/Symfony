@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProjectA!{% endblock %}
+
+{% block body %}  <div class="landscape">
+    <div class="mountain"></div>
+    <div class="mountain mountain-2"></div>
+    <div class="mountain mountain-3"></div>
+    <div class="sun-container sun-container-1">
+    </div>
+    <div class="sun-container">
+      <div class="sun"></div>
+    </div>
+    <div class="cloud"></div>
+    <div class="cloud cloud-1"></div>
+    <div class="sun-container sun-container-reflection">
+      <div class="sun"></div>
+    </div>
+    <div class="light"></div>
+    <div class="light light-1"></div>
+    <div class="light light-2"></div>
+    <div class="light light-3"></div>
+    <div class="light light-4"></div>
+    <div class="light light-5"></div>
+    <div class="light light-6"></div>
+    <div class="light light-7"></div>
+    <div class="water"></div>
+    <div class="splash"></div>
+    <div class="splash delay-1"></div>
+    <div class="splash delay-2"></div>
+    <div class="splash splash-4 delay-2"></div>
+    <div class="splash splash-4 delay-3"></div>
+    <div class="splash splash-4 delay-4"></div>
+    <div class="splash splash-stone delay-3"></div>
+    <div class="splash splash-stone splash-4"></div>
+    <div class="splash splash-stone splash-5"></div>
+    <div class="lotus lotus-1"></div>
+    <div class="lotus lotus-2"></div>
+    <div class="lotus lotus-3"></div>
+    <div class="trash-container"></div>
+    <div class="front">
+      <div class="stone"></div>
+      <div class="grass"></div>
+      <div class="grass grass-1"></div>
+      <div class="grass grass-2"></div>
+      <div class="reed"></div>
+      <div class="reed reed-1"></div>
+    </div>
+  </div>
+  <div class="logo"></div>
+  <div class="txtlgn">
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% else %}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!--Pulling Awesome Font -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-login">
+            <h4>Welcome to ProjectA</h4>
+            
+            <input type="text" value="{{ last_username }}" name="username" placeholder="username"  id="inputUsername" class="form-control" autocomplete="username" required autofocus>
+            </br>
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="password" autocomplete="current-password" required>
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+     {#
+        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+        See https://symfony.com/doc/current/security/remember_me.html
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
+    #}
+            <div class="wrapper">
+            <span class="group-btn">                  
+    <button class="btn btn-lg btn-primary" type="submit">
+        Sign in
+    </button>
+    </br>
+     <a href="{{ '/register' }}">SIGN UP</a>
+            </span>
+            </div>
+            </div>
+        
+        </div>
+        
+    </div>
+</div>
+   
+
+
+   
+
+</form>
+{% endif %}
+</div>
+{% endblock %}
